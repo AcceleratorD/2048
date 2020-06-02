@@ -5,6 +5,10 @@ export default {
 </script>
 
 <style>
+page{
+  height: 100%;
+  overflow: hidden;
+}
 .container {
   height: 100%;
   /* display: flex;

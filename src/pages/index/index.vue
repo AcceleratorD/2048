@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <div id="game" v-if="isOver"></div>
+    <!-- 遮罩层 -->
+    <div id="game" v-if="isOver" catchtouchmove="noneEnoughPeople"></div>
     <div class="head clear">
         <div class="scoreShow">
             <span class="score">Score：</span>
@@ -33,7 +34,7 @@
             </div>
         </div>
     </div>
-    <div id="gameover" v-if="isOver">
+    <div id="gameover" v-if="isOver" catchtouchmove="noneEnoughPeople">
         <div class="kid" v-if="isWin">You win!</div>
         <div class="kid" v-else>GAME OVER!</div>
         <div class="over_score">Score: {{score}}</div>
@@ -391,6 +392,8 @@ export default {
             }
         })
     },
+    // 遮罩层，空函数，遮罩层出现时禁止用户滑动
+    noneEnoughPeople(){},
   },
   
 }
